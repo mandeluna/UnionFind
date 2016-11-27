@@ -13,7 +13,7 @@ public class UnionFind {
     var sz : [Int]
     var count : Int
 
-    init(_ n: Int) {
+    public init(_ n: Int) {
     	id = [Int]()
     	sz = [Int]()
     	count = n
