@@ -1,20 +1,27 @@
+/*
+ *  Based on the Weighted Union Find algorithm 
+ *
+ *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
+ *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
+ *      http://algs4.cs.princeton.edu
+ *
+ */
+
 class UnionFind {
 
     var id : [Int]
     var sz : [Int]
+    var count : Int
 
     init(_ n: Int) {
     	id = [Int]()
     	sz = [Int]()
+    	count = n
 
     	for i in 0..<n {
     		id.append(i)
     		sz.append(1)
     	}
-    }
-
-    var size: Int {
-    	get { return id.count }
     }
 
     private func root(_ index: Int) -> Int {
@@ -26,6 +33,10 @@ class UnionFind {
     		i = id[i]
     	}
     	return i
+    }
+
+    public func size() -> Int {
+    	return count
     }
 
     public func connected(_ p: Int, _ q: Int) -> Bool {
@@ -46,5 +57,6 @@ class UnionFind {
     		id[j] = i
     		sz[i] += sz[j]
     	}
+    	count = count - 1
     }
 }

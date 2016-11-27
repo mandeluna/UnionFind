@@ -6,9 +6,10 @@ class UnionFindTests: XCTestCase {
 
         let uf = UnionFind(5)
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual(uf.size, 5)
+        XCTAssertEqual(uf.size(), 5)
         uf.union(1, 2)
         XCTAssertTrue(uf.connected(1, 2))
+        XCTAssertEqual(uf.size(), 4)
     }
 
 
