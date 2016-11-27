@@ -7,7 +7,7 @@
  *
  */
 
-class UnionFind {
+public class UnionFind {
 
     var id : [Int]
     var sz : [Int]
